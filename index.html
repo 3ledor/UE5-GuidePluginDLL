@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="Unreal Engine 5 – Creating and Building a Plugin with Dynamic-Link Libraries (DLLs)" content="">
+    <meta name="Mika Schürpf" content="">
 
-    <title>Post - Simple Blog Template</title>
+    <title>Unreal Engine 5 – Creating and Building a Plugin with Dynamic-Link Libraries (DLLs)</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,20 +39,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Simple Blog</a>
+          <a class="navbar-brand" href="index.html">ASP - E-Learning</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="about.html">About</a>
-            </li>
-            <li>
-              <a href="login.html">Login</a>
-            </li>
-            <li>
-              <a href="signup.html">Sign up</a>
-            </li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -72,7 +63,7 @@
           <!-- Blog Post -->
 
           <!-- Title -->
-          <h1 class="post-title">Blog Post Title</h1>
+          <h1 class="post-title">Unreal Engine 5 – Creating and Building a Plugin with Dynamic-Link Libraries (DLLs)</h1>
 
           <!-- Author -->
           <p class="lead">
@@ -82,74 +73,110 @@
           <hr>
 
           <!-- Date/Time -->
-          <p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p>
+          <p><span class="glyphicon glyphicon-time"></span> Posted on February 04, 2025 at 12:00 PM</p>
 
           <hr>
 
           <!-- Post Content -->
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
+<h1>Unreal Engine 5 &ndash; Creating and Building a Plugin with Dynamic-Link Libraries (DLLs)</h1>
+<h2>Who is this for?</h2>
+<p>This guide is for Unreal Engine 5 beginners or game developers who are trying to find their way into Unreal Engine 5. Basic knowledge of DLLs, programming and command shells is required because I won&rsquo;t go into all of that.</p>
+<p>And of course, you need the Unreal Engine 5.x installed with a compatible IDE.</p>
+<h2>What is this guide about?</h2>
+<p>In this guide I will explain how to create an Unreal Engine 5 plugin and how to build/package it. In addition, I will show how to use DLLs to extend and simplify your code or even use your own DLL files.</p>
+<h2>Why should I create and use plugins?</h2>
+<p>The Unreal Engine is built for plugins. It enables you to create a modular project that uses all the different plugins in a single eco-system. This will help you organize your code and split different features into different modules.</p>
+<h2>How to create a plugin in Unreal Engine 5?</h2>
+<p>The creation of the plugin will happen inside the project. So, it&rsquo;s up to you if you want to use an already existing project or create a completely new one. To have a clean plate I would suggest creating a new one.</p>
+<p>So, the first thing we need to do is create a new project. It does not matter what template you will use but to keep it small and clean I will use a &ldquo;Blank&rdquo; project. The only thing I would suggest is selecting &ldquo;C++&rdquo; so that it already creates the source files.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture1.png?raw=true" alt="" /></p>
+<p>The next step is to open the &ldquo;Plugins&rdquo; Tool. To do this you have to select &ldquo;Edit&rdquo; in the top left of the editor and then select &ldquo;Plugins&rdquo;.</p>
+<p>In this window you can add and remove plugins from your project. To create a new plugin, just click on the &ldquo;Add&rdquo; button on the top left. This will open the &ldquo;New Plugin&rdquo; window.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture2.png?raw=true" alt="" /></p>
+<p>Here you can select from a few templates that will help you with some example functions. For my case I will select &ldquo;Blueprint Library&rdquo; because I want my plugin to create new blueprints to use.</p>
+<p>You also must set the name of the plugin and if you want to, you can already set some additional information like &ldquo;Author&rdquo; or an &ldquo;Description&rdquo;. After selecting the template and setting the required information you can click on &ldquo;Create Plugin&rdquo; in the bottom right.</p>
+<p>Your own plugin will automatically be created and enabled. In the content drawer of the project, you can already see the C++ file directories that were created.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture3.png?raw=true" alt="" /></p>
+<p>You can know open the project in your IDE and there you will find a &ldquo;Plugin&rdquo; folder that contains another folder with the name of the plugin you just created. In this folder are all the files regarding your own plugin.</p>
+<p>For me the &ldquo;xxBPLibrary.cpp&rdquo; and the &ldquo;xxBPLibrary.h&rdquo; files are important, because I want to create new blueprints.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture4.png?raw=true" alt="" /></p>
+<p>In the header file of the blueprint library, you will already find an example function. As you can see from the example, you can also set the description of the plugin and some keyword for the search engine to find your blueprint in the editor.</p>
+<p>To test my plugin, I will create my own function that will be available as a blueprint. Like in any normal C++ code you will declare the function in the header file and create the definition in the CPP file.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture5.png?raw=true" alt="" /></p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture6.png?raw=true" alt="" /></p>
+<p>In my case I&rsquo;ve created a function with the name &ldquo;ThisWillReturnAString&rdquo; that takes an integer and does completely nothing with it. In return my function does return a FString that I declared and defined inside of the function.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture7.png?raw=true" alt="" /></p>
+<p>After saving and compiling the code, I can already check out my new blueprints in the editor of any actor or other object.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture8.png?raw=true" alt="" /></p>
+<p>If your own function does not appear, don&rsquo;t worry! Sometimes it&rsquo;s necessary to restart the unreal engine or to even re-generate the project files. Simply right click on the uproject file in the file explorer and click on &ldquo;generate visual studio project files&rdquo;.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture9.png?raw=true" alt="" /></p>
+<p>That&rsquo;s already it! You&rsquo;ve created your first plugin and even created a completely new blueprint!</p>
+<h2>How to build/package your own plugin?</h2>
+<p>There are two ways to build/package your previously created plugin. One is trough the unreal engine editor and the other one is using the unreal automation tools manually.</p>
+<p>Let&rsquo;s first start with the easy way through the editor!</p>
+<p>Open the &ldquo;Plugins&rdquo; window and search for your own plugin.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture10.png?raw=true" alt="" /></p>
+<p>Here you can change some information with &ldquo;Edit&rdquo; or build/package your plugin with &ldquo;Package&rdquo;. Just click on &ldquo;Package&rdquo; and select the destination for your plugin. After the compilation and package process was successful, you are already done!</p>
+<p>In the file explorer you will find a file structure that looks like a normal unreal engine project. The only thing that we are interested in, is the &ldquo;Plugins&rdquo; folder. This folder does contain our packaged plugin.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture11.png?raw=true" alt="" /></p>
+<p>The second and a bit more advanced way would be to use the &ldquo;Unreal Automation Tool&rdquo; or short &ldquo;UAT&rdquo; to build/package the plugin. The advantage of this way is that you will have a few more settings that you can choose from.</p>
+<p>The &ldquo;UAT&rdquo; can be used directly through CMD (Command Shell) or with a &ldquo;Batch file (.bat)&rdquo; file. In my case I was using a .bat file to execute the build/package process.</p>
+<p>At first you need to find the location of your unreal engine 5 installation and then find the &ldquo;RunUAT.bat&rdquo; file. In my case I found the file in the following directory &ldquo;C:\Program Files\Epic Games\UE_5.4\Engine\Build\BatchFiles&rdquo;.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture12.png?raw=true" alt="" /></p>
+<p>With the known location of the &ldquo;RunUAT.bat&rdquo; file you can now create a batch file that executes this file with additional parameters.</p>
+<p>The main parameter is the action that should be executed. In our case its &ldquo;BuildPlugin&rdquo;.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture13.png?raw=true" alt="" /></p>
+<p>After that you must define the location of the &ldquo;.uplugin&rdquo; file of your plugin to the &ldquo;-Plugin&rdquo; parameter. You can find this file in the plugin folder of your unreal engine project. After you define the source of your plugin you must also define the destination to the &ldquo;-Package&rdquo; parameter. Here you can choose any location you want the plugin to be built/packaged in.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture14.png?raw=true" alt="" /></p>
+<p>To get a list of additional settings you could add to your batch file, just run the &ldquo;RunUAT.bat&rdquo; file with &ldquo;BuildPlugin -Help&rdquo;. This will list all the available settings that you could additionally use.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture15.png?raw=true" alt="" /></p>
+<p>That&rsquo;s it! If you now run the batch file, your plugin will be built/packaged to the defined location!</p>
+<h2>How do I use DLLs in my plugin?</h2>
+<p>Implementing DLL files into your plugin is actually pretty simple with some help!</p>
+<p>First, I will create a new folder inside of my plugin that will contain the DLL files. In my case I&rsquo;ve created a folder with the name &ldquo;DLL&rdquo; that contains an &ldquo;Include&rdquo; and a &ldquo;Lib&rdquo; folder.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture16.png?raw=true" alt="" /></p>
+<p>In the &ldquo;include&rdquo; folder I will paste all the headers of my DLL files. On the other hand, in the &ldquo;lib&rdquo; folder I will paste all the .dll and .lib files of my DLLs.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture17.png?raw=true" alt="" /></p>
+<p>With that done, we will now have to make some changes to the &ldquo;.Build.cs&rdquo; file of our plugin. This file can be found in the source folder of our own plugin.</p>
+<p>The first thing we will add is the path to our additional include folder we have just created.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture18.png?raw=true" alt="" /></p>
+<p>The second thing we will add is the path to our additional libraries and set the dll to load.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture19.png?raw=true" alt="" /></p>
+<p>With that we can already start using the DLL as &ldquo;Include&rdquo; in our plugin!</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture20.png?raw=true" alt="" /></p>
+<p>Sadly, adding the path of the DLL files is not all&hellip;</p>
+<p>If you want to successfully build your project, you also must paste the .dll files to the binary folder of the unreal project. &nbsp;You can either manually copy/paste the files to the binary folder or you can create a &ldquo;PreBuildStep&rdquo; to automatically copy the files to the right directory.</p>
+<p>This can be done by editing the &ldquo;.uplugin&rdquo; file of the plugin and adding a copy command with the source location and target location.</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture21.png?raw=true" alt="" /></p>
+<p>The formation of the &ldquo;.uplugin&rdquo; file is very important and must be correct to work! In the end your file will look something like this&hellip;</p>
+<p><img src="https://github.com/3ledor/UE5-PluginDLLGuide/blob/main/Picture22.png?raw=true" alt="" /></p>
+<p>This will automatically copy the dll files to the binary folder before every build so that you don&rsquo;t have to do it manually anymore!</p>
+<p>That&rsquo;s already how you can add DLL files to your Unreal Engine plugin!</p>
+<p>Remember that if you use DLL files in your plugin, every project that uses this plugin does need&nbsp; to add the .dll files to the finished build as well or the .exe won&rsquo;t work.</p>
+<h2>About me</h2>
+<p>I&rsquo;m Mika and I&rsquo;m a game programmer that started studying games programming a few years back and is close to finishing with the Bachelor of Science degree in games programming.</p>
+<p>This guide was created as part of my ASP project in the bachelor level of my SAE study.</p>
+<p>&nbsp;</p>
+<h2>Sources</h2>
+<p><em>Building Plugins | Community tutorial</em> (2022) <em>Epic Games Developer</em>. Available at: <a href="https://dev.epicgames.com/community/learning/tutorials/qz93/unreal-engine-building-plugins">https://dev.epicgames.com/community/learning/tutorials/qz93/unreal-engine-building-plugins</a> (Accessed: 21 January 2025).</p>
+<p><em>Integrating Third-Party Libraries into Unreal Engine | Unreal Engine 5.5 Documentation | Epic Developer Community</em> (2024) <em>Epic Games Developer</em>. Available at: <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/integrating-third-party-libraries-into-unreal-engine">https://dev.epicgames.com/documentation/en-us/unreal-engine/integrating-third-party-libraries-into-unreal-engine</a> (Accessed: 21 January 2025).</p>
+<p><em>Plugins in Unreal Engine | Unreal Engine 5.5 Documentation | Epic Developer Community</em> (2024) <em>Epic Games Developer</em>. Available at: <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/plugins-in-unreal-engine">https://dev.epicgames.com/documentation/en-us/unreal-engine/plugins-in-unreal-engine</a> (Accessed: 21 January 2025).</p>
+<p>Stevanovic, M. (2014) <em>Advanced C and C++ Compiling</em>. 1. New York, NY: Apress.</p>
+<p>stevewhims (2021) <em>About Dynamic-Link Libraries - Win32 apps</em>. Available at: <a href="https://learn.microsoft.com/en-us/windows/win32/dlls/about-dynamic-link-libraries">https://learn.microsoft.com/en-us/windows/win32/dlls/about-dynamic-link-libraries</a> (Accessed: 21 January 2025).</p>
 
           <hr>
 
           <!-- Blog Comments -->
 
-          <!-- Comments Form -->
-          <div class="well">
-            <h4>Leave a Comment:</h4>
-            <form role="form">
-              <div class="form-group">
-                <textarea class="form-control" rows="3"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-          </div>
 
           <hr>
 
           <!-- Posted Comments -->
 
           <!-- Comment -->
-          <div class="media">
-            <a class="pull-left" href="#">
-              <img class="media-object" src="http://placehold.it/64x64" alt="">
-            </a>
-            <div class="media-body">
-              <h4 class="media-heading">Start Bootstrap
-                <small>August 25, 2014 at 9:30 PM</small>
-              </h4>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            </div>
-          </div>
+
 
           <!-- Comment -->
-          <div class="media">
-            <a class="pull-left" href="#">
-              <img class="media-object" src="http://placehold.it/64x64" alt="">
-            </a>
-            <div class="media-body">
-              <h4 class="media-heading">Start Bootstrap
-                <small>August 25, 2014 at 9:30 PM</small>
-              </h4>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-              <!-- Nested Comment -->
-              <div class="media">
-                <a class="pull-left" href="#">
-                  <img class="media-object" src="http://placehold.it/64x64" alt="">
-                </a>
-                <div class="media-body">
-                  <h4 class="media-heading">Nested Start Bootstrap
-                    <small>August 25, 2014 at 9:30 PM</small>
-                  </h4>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </div>
-              </div>
-              <!-- End Nested Comment -->
-            </div>
-          </div>
 
         </div>
       </div>
