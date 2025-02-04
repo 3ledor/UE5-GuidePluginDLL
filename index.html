@@ -86,6 +86,7 @@
 <p>In this guide I will explain how to create an Unreal Engine 5 plugin and how to build/package it. In addition, I will show how to use DLLs to extend and simplify your code or even use your own DLL files.</p>
 <h2>Why should I create and use plugins?</h2>
 <p>The Unreal Engine is built for plugins. It enables you to create a modular project that uses all the different plugins in a single eco-system. This will help you organize your code and split different features into different modules.</p>
+<hr />
 <h2>How to create a plugin in Unreal Engine 5?</h2>
 <p>The creation of the plugin will happen inside the project. So, it&rsquo;s up to you if you want to use an already existing project or create a completely new one. To have a clean plate I would suggest creating a new one.</p>
 <p>So, the first thing we need to do is create a new project. It does not matter what template you will use but to keep it small and clean I will use a &ldquo;Blank&rdquo; project. The only thing I would suggest is selecting &ldquo;C++&rdquo; so that it already creates the source files.</p>
@@ -111,6 +112,7 @@
 <p>If your own function does not appear, don&rsquo;t worry! Sometimes it&rsquo;s necessary to restart the unreal engine or to even re-generate the project files. Simply right click on the uproject file in the file explorer and click on &ldquo;generate visual studio project files&rdquo;.</p>
 <p><img src="https://github.com/3ledor/UE5-GuidePluginDLL/blob/master/Picture9.png?raw=true" alt="" /></p>
 <p>That&rsquo;s already it! You&rsquo;ve created your first plugin and even created a completely new blueprint!</p>
+<hr />
 <h2>How to build/package your own plugin?</h2>
 <p>There are two ways to build/package your previously created plugin. One is trough the unreal engine editor and the other one is using the unreal automation tools manually.</p>
 <p>Let&rsquo;s first start with the easy way through the editor!</p>
@@ -131,6 +133,7 @@
 <p>To get a list of additional settings you could add to your batch file, just run the &ldquo;RunUAT.bat&rdquo; file with &ldquo;BuildPlugin -Help&rdquo;. This will list all the available settings that you could additionally use.</p>
 <p><img src="https://github.com/3ledor/UE5-GuidePluginDLL/blob/master/Picture15.png?raw=true" alt="" /></p>
 <p>That&rsquo;s it! If you now run the batch file, your plugin will be built/packaged to the defined location!</p>
+<hr />
 <h2>How do I use DLLs in my plugin?</h2>
 <p>Implementing DLL files into your plugin is actually pretty simple with some help!</p>
 <p>First, I will create a new folder inside of my plugin that will contain the DLL files. In my case I&rsquo;ve created a folder with the name &ldquo;DLL&rdquo; that contains an &ldquo;Include&rdquo; and a &ldquo;Lib&rdquo; folder.</p>
@@ -153,6 +156,7 @@
 <p>This will automatically copy the dll files to the binary folder before every build so that you don&rsquo;t have to do it manually anymore!</p>
 <p>That&rsquo;s already how you can add DLL files to your Unreal Engine plugin!</p>
 <p>Remember that if you use DLL files in your plugin, every project that uses this plugin does need&nbsp; to add the .dll files to the finished build as well or the .exe won&rsquo;t work.</p>
+<hr />
 <h2>About me</h2>
 <p>I&rsquo;m Mika and I&rsquo;m a game programmer that started studying games programming a few years back and is close to finishing with the Bachelor of Science degree in games programming.</p>
 <p>This guide was created as part of my ASP project in the bachelor level of my SAE study.</p>
